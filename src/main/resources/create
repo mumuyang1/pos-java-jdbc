@@ -9,7 +9,7 @@ CREATE TABLE categories(
  name VARCHAR(40) NOT NULL
 );
 
-INSERT categories VALUES(null,'服装鞋包'),(null,'全球美食'),(null,'　日常用品');
+INSERT categories VALUES(null,'服装鞋包'),(null,'全球美食'),(null,'日常用品');
 
 CREATE TABLE items(
  id INT PRIMARY KEY AUTO_INCREMENT,
