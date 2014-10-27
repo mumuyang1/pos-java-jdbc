@@ -1,5 +1,5 @@
 
-DROP DATABASE pos_java;
+DROP DATABASE IF EXISTS pos_java;
 CREATE DATABASE pos_java;
 
 USE pos_java
