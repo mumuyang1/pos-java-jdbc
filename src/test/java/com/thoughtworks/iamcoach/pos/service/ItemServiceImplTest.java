@@ -6,6 +6,7 @@ public class ItemServiceImplTest {
 
     @Test
     public void should_have_getItem_function(){
+        ItemService itemServiceImpl = new ItemServiceImpl();
 
 
     }
