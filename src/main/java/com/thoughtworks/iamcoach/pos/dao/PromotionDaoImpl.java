@@ -7,4 +7,6 @@ public class PromotionDaoImpl implements PromotionDao {
     public Promotion getPromotion() {
         return null;
     }
+
+    
 }
