@@ -4,11 +4,14 @@ import com.thoughtworks.iamcoach.pos.entity.Item;
 import com.thoughtworks.iamcoach.pos.util.JdbcUtil;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 
 public class ItemDaoImpl implements ItemDao{
     ResultSet rs;
+    String sql;
+    Statement stmt;
     PreparedStatement pre;
     private JdbcUtil jdbcUtil = new JdbcUtil();
     Connection conn = jdbcUtil.getConnection();
@@ -33,7 +36,25 @@ public class ItemDaoImpl implements ItemDao{
 
     @Override
     public List<Item> getItems() {
-        return null;
+        List<Item> items = new ArrayList<Item>();
+        sql = "SELECT * FROM items";
+
+        try {
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+                Item item = new Item(rs.getInt("id"),rs.getString("barcode"), rs.getString("name"), rs.getString("unit"), rs.getDouble("price"),rs.getInt("categoryid"));
+                items.add(item);
+            }
+            rs.close();
+            stmt.close();
+            jdbcUtil.closeConnection();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return items;
     }
 
 
