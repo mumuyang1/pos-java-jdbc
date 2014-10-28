@@ -8,7 +8,7 @@ public class PromotionFactoryTest {
     @Test
     public void should_return_promoion_by_type(){
         PromotionFactory promotionFactory = new PromotionFactory();
-        assertThat(promotionFactory.getPromotionByType()).isEqualTo(null);
+        assertThat(promotionFactory.getPromotionByType(2).getType()).isEqualTo(0);
     }
 
 
