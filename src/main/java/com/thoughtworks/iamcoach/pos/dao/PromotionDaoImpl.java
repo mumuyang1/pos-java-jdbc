@@ -17,11 +17,11 @@ public class PromotionDaoImpl implements PromotionDao {
     public Promotion getPromotion(int id) {
         Promotion promotion = null;
         try {
-            pre = conn.prepareStatement( "SELECT * FROM categories WHERE id = ?");
+            pre = conn.prepareStatement( "SELECT * FROM promotions WHERE id = ?");
             pre.setInt(1,id);
             rs = pre.executeQuery();
             rs.next();
-            promotion = new Promotion(id,rs.getInt("type"),rs.getString("name"));
+            promotion = new Promotion(id,rs.getInt("type"),rs.getString("description"));
             rs.close();
             pre.close();
             jdbcUtil.closeConnection();

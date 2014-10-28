@@ -9,7 +9,7 @@ public class PromotionServiceImplTest {
     @Test
     public void should_have_getPromotion_by_id_function(){
         PromotionService promotionServiceImpl = new PromotionServiceImpl();
-        assertThat(promotionServiceImpl.getPromotion(1)).isEqualTo(null);
+        assertThat(promotionServiceImpl.getPromotion(1).getId()).isEqualTo(1);
 
     }
 
