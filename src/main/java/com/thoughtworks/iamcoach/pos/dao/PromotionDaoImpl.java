@@ -1,6 +1,7 @@
 package com.thoughtworks.iamcoach.pos.dao;
 
 import com.thoughtworks.iamcoach.pos.entity.Promotion;
+import com.thoughtworks.iamcoach.pos.entity.PromotionFactory;
 import com.thoughtworks.iamcoach.pos.util.JdbcUtil;
 
 import java.sql.Connection;
@@ -21,7 +22,11 @@ public class PromotionDaoImpl implements PromotionDao {
             pre.setInt(1,id);
             rs = pre.executeQuery();
             rs.next();
-            promotion = new Promotion(id,rs.getInt("type"),rs.getString("description"));
+            int type = rs.getInt("type");
+            promotion = PromotionFactory.getPromotionByType(type);
+            promotion.setId(rs.getInt("id"));
+            promotion.setDescription(rs.getString("description"));
+            promotion.setType(rs.getInt("type"));
             rs.close();
             pre.close();
             jdbcUtil.closeConnection();
