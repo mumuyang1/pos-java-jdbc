@@ -10,7 +10,7 @@ public class ScannerTest {
     public void should_return_a_cart_list() {
 
         Scanner cartItemProcessor = new Scanner();
-        assertThat(cartItemProcessor.getCartItems()).isEqualTo(null);
+        assertThat(cartItemProcessor.getCartItems().get(0).getItem().getName()).isEqualTo("五花肉");
 
     }
 }
