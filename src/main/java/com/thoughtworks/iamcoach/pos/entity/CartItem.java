@@ -3,9 +3,9 @@ package com.thoughtworks.iamcoach.pos.entity;
 public class CartItem {
     private Item item;
     private double count;
-    private int category;
+    private String category;
 
-    public CartItem(Item item, double count, int category) {
+    public CartItem(Item item, double count, String category) {
         this.item = item;
         this.count = count;
         this.category = category;
@@ -19,11 +19,11 @@ public class CartItem {
         return count;
     }
 
-    public int getCategory() {
+    public String getCategory() {
         return category;
     }
 
-    public void setCategory(int category) {
+    public void setCategory(String category) {
         this.category = category;
     }
 }
