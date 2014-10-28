@@ -12,7 +12,7 @@ public class Item {
     public Item() {
     }
 
-    public Item(int id, String barcode,String name, String unit, double price, int categoryId) {
+    public Item(int id, String barcode, String name, String unit, double price, int categoryId) {
         this.id = id;
         this.name = name;
         this.barcode = barcode;
