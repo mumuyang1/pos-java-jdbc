@@ -68,4 +68,16 @@ public class Item {
     public void setCategoryId(int categoryId) {
         this.categoryId = categoryId;
     }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "id=" + id +
+                ", barcode='" + barcode + '\'' +
+                ", name='" + name + '\'' +
+                ", unit='" + unit + '\'' +
+                ", price=" + price +
+                ", categoryId=" + categoryId +
+                '}';
+    }
 }
