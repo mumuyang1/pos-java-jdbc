@@ -3,6 +3,7 @@ package com.thoughtworks.iamcoach.pos.entity;
 public class PromotionFactory {
 
     public static final int PROMOTION_SECOND_HALF = 2;
+    public static final int PROMOTION_ONE_FREE = 1;
 
     public static Promotion getPromotionByType(int type){
         Promotion promotion = null;
@@ -10,6 +11,8 @@ public class PromotionFactory {
             case PROMOTION_SECOND_HALF:
                 promotion = new PromotionSecondHalf();
                 break;
+            case PROMOTION_ONE_FREE:
+                promotion = new PromotionOneFree();
         }
         return promotion;
     }
