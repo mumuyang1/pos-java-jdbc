@@ -2,10 +2,13 @@ package com.thoughtworks.iamcoach.pos.entity;
 
 import org.junit.Test;
 
+import static org.fest.assertions.api.Assertions.assertThat;
+
 public class PromotionFactoryTest {
     @Test
     public void should_return_promoion_by_type(){
         PromotionFactory promotionFactory = new PromotionFactory();
+        assertThat(promotionFactory.getPromotionByType()).isEqualTo(null);
     }
 
 
