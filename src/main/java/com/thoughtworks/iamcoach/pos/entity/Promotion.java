@@ -1,6 +1,6 @@
 package com.thoughtworks.iamcoach.pos.entity;
 
-public class Promotion {
+public abstract class Promotion {
 
     private int id;
     private int type;
@@ -38,4 +38,6 @@ public class Promotion {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public abstract double calculate(CartItem cartItem);
 }
