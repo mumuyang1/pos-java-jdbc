@@ -5,24 +5,14 @@ public class Promotion {
     private int id;
     private int type;
     private String description;
-    private double discount;
 
     public Promotion() {
     }
 
-    public Promotion(int id, int type, String description,double discount) {
+    public Promotion(int id, int type, String description) {
         this.id = id;
         this.type = type;
         this.description = description;
-        this.discount = discount;
-    }
-
-    public double getDiscount() {
-        return discount;
-    }
-
-    public void setDiscount(double discount) {
-        this.discount = discount;
     }
 
     public int getId() {
