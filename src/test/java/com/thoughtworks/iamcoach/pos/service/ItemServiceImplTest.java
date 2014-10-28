@@ -42,4 +42,10 @@ public class ItemServiceImplTest {
         assertThat(itemServiceImpl.getItem("ITEM000006").getUnit()).isEqualTo("个");
     }
 
+    @Test
+    public void should_have_getItems_function(){
+        ItemService itemServiceImpl = new ItemServiceImpl();
+        assertThat(itemServiceImpl.getItems()).isEqualTo(null);
+    }
+
 }
