@@ -5,7 +5,7 @@ import com.thoughtworks.iamcoach.pos.util.JdbcUtil;
 
 import java.sql.*;
 
-public class CategoryImpl implements CategoryDao {
+public class CategoryDaoImpl implements CategoryDao {
     ResultSet rs;
     PreparedStatement pre;
     private JdbcUtil jdbcUtil = new JdbcUtil();
