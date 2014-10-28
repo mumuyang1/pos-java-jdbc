@@ -1,13 +1,15 @@
 package com.thoughtworks.iamcoach.pos.service;
 
+import com.thoughtworks.iamcoach.pos.dao.CategoryDao;
+import com.thoughtworks.iamcoach.pos.dao.CategoryDaoImpl;
 import com.thoughtworks.iamcoach.pos.entity.Category;
 
-/**
- * Created by xueqian on 10/28/14.
- */
 public class CategoryServiceImpl implements CategoryService {
+
+    private CategoryDao categoryDaoImpl = new CategoryDaoImpl();
+
     @Override
     public Category getCategory(int id) {
-        return null;
+        return categoryDaoImpl.getCategory(id);
     }
 }
