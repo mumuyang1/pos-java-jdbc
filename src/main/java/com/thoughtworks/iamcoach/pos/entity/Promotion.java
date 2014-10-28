@@ -40,4 +40,13 @@ public abstract class Promotion {
     }
 
     public abstract double calculate(CartItem cartItem);
+
+    @Override
+    public String toString() {
+        return "Promotion{" +
+                "id=" + id +
+                ", type=" + type +
+                ", description='" + description + '\'' +
+                '}';
+    }
 }
