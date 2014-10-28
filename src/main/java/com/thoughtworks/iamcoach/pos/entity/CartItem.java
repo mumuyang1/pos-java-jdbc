@@ -11,6 +11,12 @@ public class CartItem {
         this.category = category;
     }
 
+    public CartItem(Item item, double count) {
+        this.item = item;
+        this.count = count;
+
+    }
+
     public Item getItem() {
         return item;
     }
@@ -25,6 +31,15 @@ public class CartItem {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    @Override
+    public String toString() {
+        return "CartItem{" +
+                "item=" + item +
+                ", count=" + count +
+                ", category='" + category + '\'' +
+                '}';
     }
 }
 
