@@ -5,14 +5,14 @@ public abstract class Promotion {
     private int id;
     private int type;
     private String description;
+    private double discount;
 
-    public Promotion() {
+    public double getDiscount() {
+        return discount;
     }
 
-    public Promotion(int id, int type, String description) {
-        this.id = id;
-        this.type = type;
-        this.description = description;
+    public void setDiscount(double discount) {
+        this.discount = discount;
     }
 
     public int getId() {
@@ -40,13 +40,4 @@ public abstract class Promotion {
     }
 
     public abstract double calculate(CartItem cartItem);
-
-    @Override
-    public String toString() {
-        return "Promotion{" +
-                "id=" + id +
-                ", type=" + type +
-                ", description='" + description + '\'' +
-                '}';
-    }
 }
