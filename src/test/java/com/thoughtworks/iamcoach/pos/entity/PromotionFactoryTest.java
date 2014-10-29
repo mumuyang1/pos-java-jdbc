@@ -10,7 +10,6 @@ public class PromotionFactoryTest {
         PromotionFactory promotionFactory = new PromotionFactory();
         assertThat(promotionFactory.getPromotionByType(2).getType()).isEqualTo(0);
         assertThat(promotionFactory.getPromotionByType(1).getType()).isEqualTo(0);
+        assertThat(promotionFactory.getPromotionByType(3).getType()).isEqualTo(0);
     }
-
-
 }
