@@ -39,10 +39,10 @@ public class Scanner {
         Set<String> cartCategories = new HashSet<String>();
         Scanner scanner = new Scanner();
         List<CartItem> cartItems = scanner.getCartItems();
-        
         for(CartItem cartItem : cartItems){
             cartCategories.add(cartItem.getItem().getCategory());
         }
+
         return cartCategories;
     }
 }
