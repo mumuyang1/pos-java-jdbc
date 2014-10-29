@@ -42,4 +42,16 @@ public class ItemServiceImplTest {
         assertThat(itemServiceImpl.getItem("ITEM000006").getUnit()).isEqualTo("个");
     }
 
+    @Test
+    public void should_return_correct_getPromotions_by_getItem_function(){
+        ItemService itemServiceImpl = new ItemServiceImpl();
+        assertThat(itemServiceImpl.getItem("ITEM000006").getPromotions().get(0).getType()).isEqualTo(1);
+    }
+
+    @Test
+    public void should_return_no_getPromotions_by_getItem_function(){
+        ItemService itemServiceImpl = new ItemServiceImpl();
+        assertThat(itemServiceImpl.getItem("ITEM000002").getPromotions().size()).isEqualTo(0);
+    }
+
 }
