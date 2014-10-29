@@ -4,8 +4,6 @@ import com.thoughtworks.iamcoach.pos.dao.ItemDao;
 import com.thoughtworks.iamcoach.pos.dao.ItemDaoImpl;
 import com.thoughtworks.iamcoach.pos.entity.Item;
 
-import java.util.List;
-
 public class ItemServiceImpl implements ItemService {
     private ItemDao itemDaoImpl = new ItemDaoImpl();
 
@@ -14,8 +12,4 @@ public class ItemServiceImpl implements ItemService {
         return itemDaoImpl.getItem(barcode);
     }
 
-    @Override
-    public List<Item> getItems() {
-        return itemDaoImpl.getItems();
-    }
 }
