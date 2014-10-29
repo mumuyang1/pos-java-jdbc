@@ -11,4 +11,10 @@ public class ScannerTest {
         Scanner cartItemProcessor = new Scanner();
         assertThat(cartItemProcessor.getCartItems().get(0).getItem().getName()).isEqualTo("五花肉");
     }
+
+    @Test
+    public void should_return_a_cartItems_category_list() {
+        Scanner scanner = new Scanner();
+        assertThat(scanner.getCartCategories().contains("全球美食")).isEqualTo(false);
+    }
 }

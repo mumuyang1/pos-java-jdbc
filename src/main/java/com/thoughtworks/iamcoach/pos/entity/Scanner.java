@@ -34,4 +34,9 @@ public class Scanner {
         ItemService itemServiceImpl = new ItemServiceImpl();
         return itemServiceImpl.getItem(barcode);
     }
+
+    public Set<String> getCartCategories() {
+        Set<String> cartCategories = new HashSet<String>();
+        return cartCategories;
+    }
 }
