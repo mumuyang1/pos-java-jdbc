@@ -2,7 +2,7 @@
 DROP DATABASE IF EXISTS pos_java;
 CREATE DATABASE pos_java;
 
-USE pos_java
+USE pos_java;
 
 CREATE TABLE categories(
  c_id INT PRIMARY KEY AUTO_INCREMENT,
