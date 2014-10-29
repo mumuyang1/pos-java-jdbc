@@ -1,5 +1,8 @@
 package com.thoughtworks.iamcoach.pos.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Item {
 
     private int id;
@@ -7,18 +10,29 @@ public class Item {
     private String name;
     private String unit;
     private double price;
-    private int categoryId;
+    private String category;
+    private List<Promotion> promotions = new ArrayList<Promotion>();
 
     public Item() {
     }
 
-    public Item(int id, String barcode, String name, String unit, double price, int categoryId) {
+    public Item(int id, String barcode, String name, String unit, double price, String category) {
         this.id = id;
-        this.name = name;
         this.barcode = barcode;
+        this.name = name;
         this.unit = unit;
         this.price = price;
-        this.categoryId = categoryId;
+        this.category = category;
+    }
+
+    public Item(int id, String barcode, String name, String unit, double price, String category, List<Promotion> promotions) {
+        this.id = id;
+        this.barcode = barcode;
+        this.name = name;
+        this.unit = unit;
+        this.price = price;
+        this.category = category;
+        this.promotions = promotions;
     }
 
     public int getId() {
@@ -61,23 +75,20 @@ public class Item {
         this.price = price;
     }
 
-    public int getCategoryId() {
-        return categoryId;
+    public String getCategory() {
+        return category;
     }
 
-    public void setCategoryId(int categoryId) {
-        this.categoryId = categoryId;
+    public void setCategory(String category) {
+        this.category = category;
     }
 
-    @Override
-    public String toString() {
-        return "Item{" +
-                "id=" + id +
-                ", barcode='" + barcode + '\'' +
-                ", name='" + name + '\'' +
-                ", unit='" + unit + '\'' +
-                ", price=" + price +
-                ", categoryId=" + categoryId +
-                '}';
+    public List<Promotion> getPromotions() {
+        return promotions;
     }
+
+    public void setPromotions(List<Promotion> promotions) {
+        this.promotions = promotions;
+    }
+
 }
