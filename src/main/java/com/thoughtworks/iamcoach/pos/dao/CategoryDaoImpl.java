@@ -14,11 +14,11 @@ public class CategoryDaoImpl implements CategoryDao {
     public Category getCategory(int id) {
         Category category = null;
         try {
-            pre = conn.prepareStatement( "SELECT * FROM categories WHERE id = ?");
+            pre = conn.prepareStatement( "SELECT * FROM categories WHERE c_id = ?");
             pre.setInt(1,id);
             rs = pre.executeQuery();
             rs.next();
-            category = new Category(id,rs.getString("name"));
+            category = new Category(id,rs.getString("c_name"));
             rs.close();
             pre.close();
             jdbcUtil.closeConnection();
