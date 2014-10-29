@@ -5,20 +5,20 @@ CREATE DATABASE pos_java;
 USE pos_java
 
 CREATE TABLE categories(
- id INT PRIMARY KEY AUTO_INCREMENT,
- name VARCHAR(40) NOT NULL
+ c_id INT PRIMARY KEY AUTO_INCREMENT,
+ c_name VARCHAR(40) NOT NULL
 );
 
 INSERT categories VALUES(null,'服装鞋包'),(null,'全球美食'),(null,'日常用品');
 
 CREATE TABLE items(
- id INT PRIMARY KEY AUTO_INCREMENT,
- barcode VARCHAR(30),
- name VARCHAR(30),
- unit VARCHAR(8),
- price DOUBLE,
- categoryid int not null,
- CONSTRAINT category_item_fk FOREIGN KEY(categoryid) REFERENCES categories(id)
+ i_id INT PRIMARY KEY AUTO_INCREMENT,
+ i_barcode VARCHAR(30),
+ i_name VARCHAR(30),
+ i_unit VARCHAR(8),
+ i_price DOUBLE,
+ i_categoryid int not null,
+ CONSTRAINT category_item_fk FOREIGN KEY(i_categoryid) REFERENCES categories(c_id)
 );
 
 INSERT items VALUES
@@ -30,9 +30,9 @@ INSERT items VALUES
   (null,'ITEM000006','鞋架','个',100,3);
 
 CREATE TABLE promotions(
- id INT PRIMARY KEY AUTO_INCREMENT,
- type INT NOT NULL,
- description VARCHAR(200)
+ p_id INT PRIMARY KEY AUTO_INCREMENT,
+ p_type INT NOT NULL,
+ p_description VARCHAR(200)
 );
 
 INSERT promotions VALUES
@@ -41,8 +41,8 @@ INSERT promotions VALUES
   (null,3,'打折');
 
 CREATE TABLE items_promotions(
- itemid INT NOT NULL REFERENCES items(id),
- promotionid INT NOT NULL REFERENCES promotions(id),
+ itemid INT NOT NULL REFERENCES items(i_id),
+ promotionid INT NOT NULL REFERENCES promotions(p_id),
  discount DOUBLE,
  PRIMARY KEY(itemid,promotionid)
 );
