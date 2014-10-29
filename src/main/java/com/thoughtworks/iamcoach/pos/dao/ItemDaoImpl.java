@@ -1,6 +1,8 @@
 package com.thoughtworks.iamcoach.pos.dao;
 
 import com.thoughtworks.iamcoach.pos.entity.Item;
+import com.thoughtworks.iamcoach.pos.entity.Promotion;
+import com.thoughtworks.iamcoach.pos.entity.PromotionFactory;
 import com.thoughtworks.iamcoach.pos.util.JdbcUtil;
 
 import java.sql.*;
@@ -8,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class ItemDaoImpl implements ItemDao{
+public class ItemDaoImpl implements ItemDao {
     ResultSet rs;
     String sql;
     Statement stmt;
@@ -18,13 +20,14 @@ public class ItemDaoImpl implements ItemDao{
 
     @Override
     public Item getItem(String barcode) {
+
         Item item = null;
         try {
-            pre = conn.prepareStatement( "SELECT * FROM items WHERE barcode = ?");
+            pre = conn.prepareStatement("select * from items i,categories c where  i.i_categoryid = c.c_id and i_barcode =?");
             pre.setString(1, barcode);
             rs = pre.executeQuery();
             rs.next();
-            item = new Item(rs.getInt("id"),barcode, rs.getString("name"), rs.getString("unit"), rs.getDouble("price"),rs.getInt("categoryid"));
+            item = new Item(rs.getInt("i_id"), barcode, rs.getString("i_name"), rs.getString("i_unit"), rs.getDouble("i_price"), rs.getString("c_name"));
             rs.close();
             pre.close();
             jdbcUtil.closeConnection();
@@ -35,27 +38,34 @@ public class ItemDaoImpl implements ItemDao{
     }
 
     @Override
-    public List<Item> getItems() {
-        List<Item> items = new ArrayList<Item>();
-        sql = "SELECT * FROM items";
+    public List<Promotion> getItemPromotions(String barcode) {
+        List<Promotion> itemPromotions = new ArrayList<Promotion>();
 
         try {
-            stmt = conn.createStatement();
-            rs = stmt.executeQuery(sql);
+            pre = conn.prepareStatement("select * from items i,items_promotions ip where i.i_id=ip.itemid  and i_barcode = ?");
+            pre.setString(1, barcode);
+            rs = pre.executeQuery();
             while (rs.next()) {
-                Item item = new Item(rs.getInt("id"),rs.getString("barcode"), rs.getString("name"), rs.getString("unit"), rs.getDouble("price"),rs.getInt("categoryid"));
-                items.add(item);
+                PromotionDao promotionDaoImpl = new PromotionDaoImpl();
+                int promotionId = rs.getInt("promotionid");
+                Promotion promotion = promotionDaoImpl.getPromotion(promotionId);
+                Promotion promotion1 = PromotionFactory.getPromotionByType(promotion.getType());
+                promotion1.setId(promotion.getId());
+                promotion1.setType(promotion.getType());
+                promotion1.setDescription(promotion.getDescription());
+                promotion1.setDiscount(rs.getDouble("discount"));
+                itemPromotions.add(promotion1);
             }
             rs.close();
-            stmt.close();
+            pre.close();
             jdbcUtil.closeConnection();
+
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return itemPromotions;
 
-        return items;
     }
-
 
 }
