@@ -25,16 +25,6 @@ public class Item {
         this.category = category;
     }
 
-    public Item(int id, String barcode, String name, String unit, double price, String category, List<Promotion> promotions) {
-        this.id = id;
-        this.barcode = barcode;
-        this.name = name;
-        this.unit = unit;
-        this.price = price;
-        this.category = category;
-        this.promotions = promotions;
-    }
-
     public int getId() {
         return id;
     }
