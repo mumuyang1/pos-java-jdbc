@@ -7,6 +7,4 @@ import java.util.List;
 public interface ItemService {
 
     Item getItem(String barcode);
-
-    List<Item> getItems();
 }
