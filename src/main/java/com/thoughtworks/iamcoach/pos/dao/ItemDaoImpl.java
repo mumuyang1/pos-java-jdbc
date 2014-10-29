@@ -9,11 +9,8 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class ItemDaoImpl implements ItemDao {
     ResultSet rs;
-    String sql;
-    Statement stmt;
     PreparedStatement pre;
     private JdbcUtil jdbcUtil = new JdbcUtil();
     Connection conn = jdbcUtil.getConnection();
@@ -31,6 +28,7 @@ public class ItemDaoImpl implements ItemDao {
             rs.close();
             pre.close();
             jdbcUtil.closeConnection();
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -45,6 +43,7 @@ public class ItemDaoImpl implements ItemDao {
             pre = conn.prepareStatement("select * from items i,items_promotions ip where i.i_id=ip.itemid  and i_barcode = ?");
             pre.setString(1, barcode);
             rs = pre.executeQuery();
+
             while (rs.next()) {
                 PromotionDao promotionDaoImpl = new PromotionDaoImpl();
                 int promotionId = rs.getInt("promotionid");
@@ -60,12 +59,10 @@ public class ItemDaoImpl implements ItemDao {
             pre.close();
             jdbcUtil.closeConnection();
 
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return itemPromotions;
-
     }
 
 }
