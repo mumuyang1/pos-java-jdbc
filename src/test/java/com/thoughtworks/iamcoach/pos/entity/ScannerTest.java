@@ -15,6 +15,6 @@ public class ScannerTest {
     @Test
     public void should_return_a_cartItems_category_list() {
         Scanner scanner = new Scanner();
-        assertThat(scanner.getCartCategories().contains("全球美食")).isEqualTo(false);
+        assertThat(scanner.getCartCategories().contains("全球美食")).isEqualTo(true);
     }
 }
