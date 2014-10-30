@@ -43,4 +43,9 @@ public class Calculator {
         }
         return totalMoneyAfterPromoting;
     }
+
+
+    public static double getTotalSavedMoney() {
+        return 0;
+    }
 }
