@@ -80,7 +80,10 @@ public class CalculatorTest {
 //        assertThat(Calculator.getTotalMoney()).isEqualTo(233);
 //    }
 
-
+    @Test
+    public void should_return_a_total_money_with_promotions_for_all_cart_items(){
+        assertThat(Calculator.getTotalMoneyAfterPromoting()).isEqualTo(0);
+    }
 
 
 }

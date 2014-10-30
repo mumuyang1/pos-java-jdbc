@@ -32,4 +32,8 @@ public class Calculator {
         }
         return totalMoney;
     }
+
+    public static double getTotalMoneyAfterPromoting() {
+        return 0;
+    }
 }
