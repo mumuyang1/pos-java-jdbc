@@ -26,15 +26,15 @@ public class CalculatorTest {
 
         item.setPromotions(itemPromotions);
         CartItem cartItem = new CartItem(item, 5);
-        assertThat(Calculator.getSubtotal(cartItem)).isEqualTo(0);
+        assertThat(Calculator.getSubtotal(cartItem)).isEqualTo(42.5);
     }
 
     @Test
-    public void should_return_basic_money_when_item_has_no_peomotions() {
+    public void should_return_basic_money_when_item_has_no_promotions() {
         Item item = new Item(1, "ITEM000001", "麦斯威尔", "盒", 17, "咖啡");
         CartItem cartItem = new CartItem(item, 3);
         List<Promotion> noPromotion = new ArrayList<Promotion>();
         item.setPromotions(noPromotion);
-        assertThat(Calculator.getSubtotal(cartItem)).isEqualTo(0);
+        assertThat(Calculator.getSubtotal(cartItem)).isEqualTo(51);
     }
 }
