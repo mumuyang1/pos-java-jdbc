@@ -68,7 +68,7 @@ public class CalculatorTest {
         List<CartItem> cartItems = new ArrayList<CartItem>();
         cartItems.add(cartItem1);
         cartItems.add(cartItem2);
-        assertThat(Calculator.getTotalMoney()).isEqualTo(0);
+        assertThat(Calculator.getTotalMoney(cartItems)).isEqualTo(235);
 
     }
 }

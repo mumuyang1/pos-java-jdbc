@@ -20,7 +20,14 @@ public class Calculator {
         return cartItem.getItem().getPrice() * cartItem.getCount();
     }
 
-    public static double getTotalMoney() {
-        return 0;
+    public static double getTotalMoney(List<CartItem> cartItems) {
+
+        double totalMoney = 0.0;
+
+        for (CartItem cartItem : cartItems) {
+
+            totalMoney += cartItem.getItem().getPrice() * cartItem.getCount();
+        }
+        return totalMoney;
     }
 }
