@@ -22,8 +22,5 @@ public class CartItem {
         return count;
     }
 
-    public void setCount(double count) {
-        this.count = count;
-    }
 }
 
