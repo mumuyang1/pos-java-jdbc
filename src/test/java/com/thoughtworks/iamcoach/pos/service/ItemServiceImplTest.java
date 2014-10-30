@@ -7,8 +7,11 @@ import com.thoughtworks.iamcoach.pos.dao.PromotionDaoImpl;
 import com.thoughtworks.iamcoach.pos.entity.Item;
 import com.thoughtworks.iamcoach.pos.entity.Promotion;
 import com.thoughtworks.iamcoach.pos.entity.PromotionFactory;
+import com.thoughtworks.iamcoach.pos.util.JdbcUtil;
 import org.junit.Test;
 
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -21,12 +24,15 @@ import static org.mockito.Mockito.when;
 public class ItemServiceImplTest {
 
 //    @Test
-//    public void should_return_correct_getName_by_getItem_function(){
+//    public void should_return_correct_getName_by_getItem_function() throws SQLException {
 //        PromotionDao promotionDao = mock(PromotionDaoImpl.class);
 //        Set<String> promotionBarcodes = new HashSet<String>();
 //        promotionBarcodes.add("ITEM000001");
 //        promotionBarcodes.add("ITEM000003");
 //        when(promotionDao.getPromotionBarcode()).thenReturn(promotionBarcodes);
+//
+//        JdbcUtil jdbcUtil = mock(JdbcUtil.class);
+//        when(jdbcUtil.getConnection()).thenReturn(DriverManager.getConnection("", "", ""));
 //
 //        ItemDao itemDao = mock(ItemDaoImpl.class);
 //        Item item = new Item();
@@ -38,13 +44,12 @@ public class ItemServiceImplTest {
 //        promotion.setDiscount(90);
 //        promotion.setDescription("打折");
 //        promotions.add(0, promotion);
+//        when(promotionDao.getPromotion(1)).thenReturn(promotion);
+//
 //        item.setPromotions(promotions);
 //        ItemService itemServiceImpl = new ItemServiceImpl();
-////        System.out.print(itemServiceImpl.getItem("ITEM000001"));
 //        assertThat(itemServiceImpl.getItem("ITEM000001").getPromotions()).isEqualTo(null);
 //    }
-
-
 
     @Test
     public void should_return_correct_getBarcode_by_getItem_function(){

@@ -9,7 +9,7 @@ public class JdbcUtil {
     private String driverName = "com.mysql.jdbc.Driver";
     private String url = "jdbc:mysql://localhost:3306/pos_java";
     private String userName = "root";
-    private String password = "lyz123";
+    private String password = "xueqian";
 
     private Connection conn;
 
