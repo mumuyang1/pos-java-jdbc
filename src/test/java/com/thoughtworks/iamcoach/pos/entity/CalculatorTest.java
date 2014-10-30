@@ -1,5 +1,7 @@
 package com.thoughtworks.iamcoach.pos.entity;
 
+import com.thoughtworks.iamcoach.pos.entity.promotion.Promotion;
+import com.thoughtworks.iamcoach.pos.entity.promotion.PromotionFactory;
 import org.junit.Test;
 
 import java.util.ArrayList;

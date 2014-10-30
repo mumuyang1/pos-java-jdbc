@@ -1,4 +1,6 @@
-package com.thoughtworks.iamcoach.pos.entity;
+package com.thoughtworks.iamcoach.pos.entity.promotion;
+
+import com.thoughtworks.iamcoach.pos.entity.CartItem;
 
 public abstract class Promotion {
 

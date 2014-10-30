@@ -1,4 +1,7 @@
-package com.thoughtworks.iamcoach.pos.entity;
+package com.thoughtworks.iamcoach.pos.entity.promotion;
+
+import com.thoughtworks.iamcoach.pos.entity.CartItem;
+import com.thoughtworks.iamcoach.pos.entity.promotion.Promotion;
 
 public class PromotionOneFree extends Promotion {
     @Override

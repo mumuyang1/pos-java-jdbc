@@ -1,4 +1,4 @@
-package com.thoughtworks.iamcoach.pos.entity;
+package com.thoughtworks.iamcoach.pos.entity.promotion;
 
 public class PromotionFactory {
 
