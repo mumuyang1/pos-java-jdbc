@@ -1,7 +1,11 @@
 package com.thoughtworks.iamcoach.pos.util;
 
-/**
- * Created by xueqian on 10/30/14.
- */
+import java.math.BigDecimal;
+
 public class DataTransfer {
+    public double transfer(double data) {
+
+        BigDecimal b = new BigDecimal(data);
+        return b.setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue();
+    }
 }
