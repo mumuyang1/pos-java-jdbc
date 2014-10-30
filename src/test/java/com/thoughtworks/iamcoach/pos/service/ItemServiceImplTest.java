@@ -1,16 +1,50 @@
 package com.thoughtworks.iamcoach.pos.service;
 
+import com.thoughtworks.iamcoach.pos.dao.ItemDao;
+import com.thoughtworks.iamcoach.pos.dao.ItemDaoImpl;
+import com.thoughtworks.iamcoach.pos.dao.PromotionDao;
+import com.thoughtworks.iamcoach.pos.dao.PromotionDaoImpl;
+import com.thoughtworks.iamcoach.pos.entity.Item;
+import com.thoughtworks.iamcoach.pos.entity.Promotion;
+import com.thoughtworks.iamcoach.pos.entity.PromotionFactory;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 import static org.fest.assertions.api.Assertions.assertThat;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 public class ItemServiceImplTest {
 
-    @Test
-    public void should_return_correct_getName_by_getItem_function(){
-        ItemService itemServiceImpl = new ItemServiceImpl();
-        assertThat(itemServiceImpl.getItem("ITEM000001").getName()).isEqualTo("女装");
-    }
+//    @Test
+//    public void should_return_correct_getName_by_getItem_function(){
+//        PromotionDao promotionDao = mock(PromotionDaoImpl.class);
+//        Set<String> promotionBarcodes = new HashSet<String>();
+//        promotionBarcodes.add("ITEM000001");
+//        promotionBarcodes.add("ITEM000003");
+//        when(promotionDao.getPromotionBarcode()).thenReturn(promotionBarcodes);
+//
+//        ItemDao itemDao = mock(ItemDaoImpl.class);
+//        Item item = new Item();
+//        when(itemDao.getItem("ITEM000001")).thenReturn(new Item(1,"ITEM000001","测试","菜菜",100,"hahaha"));
+//        List<Promotion> promotions = new ArrayList<Promotion>();
+//        Promotion promotion = PromotionFactory.getPromotionByType(1);
+//        promotion.setId(1);
+//        promotion.setType(1);
+//        promotion.setDiscount(90);
+//        promotion.setDescription("打折");
+//        promotions.add(0, promotion);
+//        item.setPromotions(promotions);
+//        ItemService itemServiceImpl = new ItemServiceImpl();
+////        System.out.print(itemServiceImpl.getItem("ITEM000001"));
+//        assertThat(itemServiceImpl.getItem("ITEM000001").getPromotions()).isEqualTo(null);
+//    }
+
+
 
     @Test
     public void should_return_correct_getBarcode_by_getItem_function(){
