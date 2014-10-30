@@ -19,4 +19,8 @@ public class Calculator {
 
         return cartItem.getItem().getPrice() * cartItem.getCount();
     }
+
+    public static double getTotalMoney() {
+        return 0;
+    }
 }
