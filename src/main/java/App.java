@@ -15,16 +15,16 @@ public class App {
         System.out.println("打印时间 " + dateFormat.format(new Date()));
 
         Scanner scanner = new Scanner();
-        List<CartItem> cartItems =  scanner.getCartItems();
+        List<CartItem> cartItems = scanner.getCartItems();
         Set<String> cartCategories = scanner.getCartCategories();
 
-        for(String cartCategory: cartCategories) {
-            for (CartItem cartItem : cartItems){
+        for (String cartCategory : cartCategories) {
+            for (CartItem cartItem : cartItems) {
 
-                if (cartCategory.equals(cartItem.getItem().getCategory())){
-                    System.out.println( cartItem.getItem().getCategory()+": 名称：" + cartItem.getItem().getName() +
-                            "  数量：" + cartItem.getCount() + "  单价：" + cartItem.getItem().getPrice() + "元"+
-                            "  单位：" + cartItem.getItem().getUnit() + "  小计:" + DataTransfer.transfer(Calculator.getSubtotal(cartItem)) +"元");
+                if (cartCategory.equals(cartItem.getItem().getCategory())) {
+                    System.out.println(cartItem.getItem().getCategory() + ": 名称：" + cartItem.getItem().getName() +
+                            "  数量：" + cartItem.getCount() + "  单价：" + cartItem.getItem().getPrice() + "元" +
+                            "  单位：" + cartItem.getItem().getUnit() + "  小计:" + DataTransfer.transfer(Calculator.getSubtotal(cartItem)) + "元");
                 }
             }
         }
