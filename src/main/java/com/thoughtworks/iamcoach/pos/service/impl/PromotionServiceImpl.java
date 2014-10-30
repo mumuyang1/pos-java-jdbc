@@ -1,8 +1,9 @@
-package com.thoughtworks.iamcoach.pos.service;
+package com.thoughtworks.iamcoach.pos.service.impl;
 
 import com.thoughtworks.iamcoach.pos.dao.PromotionDao;
 import com.thoughtworks.iamcoach.pos.dao.impl.PromotionDaoImpl;
 import com.thoughtworks.iamcoach.pos.entity.promotion.Promotion;
+import com.thoughtworks.iamcoach.pos.service.PromotionService;
 
 import java.util.Set;
 

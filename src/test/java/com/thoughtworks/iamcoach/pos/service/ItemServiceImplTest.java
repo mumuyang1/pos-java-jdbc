@@ -1,5 +1,6 @@
 package com.thoughtworks.iamcoach.pos.service;
 
+import com.thoughtworks.iamcoach.pos.service.impl.ItemServiceImpl;
 import org.junit.Test;
 
 import static org.fest.assertions.api.Assertions.assertThat;
