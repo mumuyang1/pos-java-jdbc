@@ -20,10 +20,12 @@ public class Calculator {
         return cartItem.getItem().getPrice() * cartItem.getCount();
     }
 
-    public static double getTotalMoney(List<CartItem> cartItems) {
+
+    public static double getTotalMoney() {
 
         double totalMoney = 0.0;
-
+        Scanner scanner = new Scanner();
+        List<CartItem> cartItems = scanner.getCartItems();
         for (CartItem cartItem : cartItems) {
 
             totalMoney += cartItem.getItem().getPrice() * cartItem.getCount();
