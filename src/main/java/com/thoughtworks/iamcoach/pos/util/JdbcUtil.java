@@ -27,7 +27,7 @@ public class JdbcUtil {
         return conn;
     }
 
-    public void closeConnection(){
+    public void closeConnection() {
         try {
             conn.close();
         } catch (SQLException e) {

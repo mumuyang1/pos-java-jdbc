@@ -21,9 +21,9 @@ public class PromotionDiscountTest {
         promotion.setDiscount(90);
         promotion.setDescription("打折");
         promotions.add(0, promotion);
-        Item item = new Item (1,"ITEM000001","测试１","你猜",100,"不告诉你");
+        Item item = new Item(1, "ITEM000001", "测试１", "你猜", 100, "不告诉你");
         item.setPromotions(promotions);
-        CartItem cartItem = new CartItem(item,2);
+        CartItem cartItem = new CartItem(item, 2);
         assertThat(promotionDiscount.calculate(cartItem)).isEqualTo(180);
     }
 }

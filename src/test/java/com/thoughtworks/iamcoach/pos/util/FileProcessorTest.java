@@ -17,7 +17,7 @@ public class FileProcessorTest {
     }
 
     @Test(expected = NullPointerException.class)
-    public void should_throws_exception()throws NullPointerException{
+    public void should_throws_exception() throws NullPointerException {
         FileProcessor.readFile("i");
     }
 

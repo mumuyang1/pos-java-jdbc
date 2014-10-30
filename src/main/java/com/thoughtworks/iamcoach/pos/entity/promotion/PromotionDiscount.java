@@ -9,7 +9,7 @@ public class PromotionDiscount extends Promotion {
     @Override
     public double calculate(CartItem cartItem) {
         double basicMoney = cartItem.getCount() * cartItem.getItem().getPrice();
-        return  basicMoney * getDiscount(cartItem);
+        return basicMoney * getDiscount(cartItem);
     }
 
     private double getDiscount(CartItem cartItem) {

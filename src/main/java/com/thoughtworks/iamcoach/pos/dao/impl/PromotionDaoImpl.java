@@ -17,12 +17,13 @@ public class PromotionDaoImpl implements PromotionDao {
     PreparedStatement pre;
     private JdbcUtil jdbcUtil = new JdbcUtil();
     Connection conn = jdbcUtil.getConnection();
+
     @Override
     public Promotion getPromotion(int id) {
         Promotion promotion = null;
         try {
-            pre = conn.prepareStatement( "SELECT * FROM promotions WHERE p_id = ?");
-            pre.setInt(1,id);
+            pre = conn.prepareStatement("SELECT * FROM promotions WHERE p_id = ?");
+            pre.setInt(1, id);
             rs = pre.executeQuery();
             rs.next();
             int type = rs.getInt("p_type");
@@ -45,7 +46,7 @@ public class PromotionDaoImpl implements PromotionDao {
         try {
             pre = conn.prepareStatement("select * from items i, items_promotions ip where i.i_id = ip.itemid ");
             rs = pre.executeQuery();
-            while (rs.next()){
+            while (rs.next()) {
                 promotionBarcodes.add(rs.getString("i_barcode"));
             }
             rs.close();

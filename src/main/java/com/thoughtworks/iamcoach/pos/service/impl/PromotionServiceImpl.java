@@ -10,6 +10,7 @@ import java.util.Set;
 public class PromotionServiceImpl implements PromotionService {
 
     private PromotionDao promotionDaoImpl = new PromotionDaoImpl();
+
     @Override
     public Promotion getPromotion(int id) {
         return promotionDaoImpl.getPromotion(id);

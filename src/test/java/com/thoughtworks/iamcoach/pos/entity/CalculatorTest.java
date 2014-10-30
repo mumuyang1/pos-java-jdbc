@@ -41,7 +41,7 @@ public class CalculatorTest {
     }
 
     @Test
-    public void should_return_total_money_for_all_cart_items(){
+    public void should_return_total_money_for_all_cart_items() {
 
         assertThat(Calculator.getTotalMoney()).isEqualTo(5151);
     }
@@ -83,7 +83,7 @@ public class CalculatorTest {
 //    }
 
     @Test
-    public void should_return_a_total_money_with_promotions_for_all_cart_items(){
+    public void should_return_a_total_money_with_promotions_for_all_cart_items() {
         assertThat(Calculator.getTotalMoneyAfterPromoting()).isEqualTo(4608.8);
     }
 

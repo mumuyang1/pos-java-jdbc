@@ -6,16 +6,16 @@ public class PromotionFactory {
     public static final int PROMOTION_SECOND_HALF = 2;
     public static final int PROMOTION_DISCOUNT = 3;
 
-    public static Promotion getPromotionByType(int type){
+    public static Promotion getPromotionByType(int type) {
         Promotion promotion = null;
-        switch(type){
+        switch (type) {
             case PROMOTION_SECOND_HALF:
                 promotion = new PromotionSecondHalf();
                 break;
             case PROMOTION_ONE_FREE:
                 promotion = new PromotionOneFree();
                 break;
-            case  PROMOTION_DISCOUNT:
+            case PROMOTION_DISCOUNT:
                 promotion = new PromotionDiscount();
                 break;
             default:
