@@ -87,7 +87,7 @@ public class CalculatorTest {
 
     @Test
     public void should_return_total_saved_money() {
-        assertThat(Calculator.getTotalSavedMoney()).isEqualTo(0);
+        assertThat(Calculator.getTotalSavedMoney()).isEqualTo(542.2);
     }
 
 
