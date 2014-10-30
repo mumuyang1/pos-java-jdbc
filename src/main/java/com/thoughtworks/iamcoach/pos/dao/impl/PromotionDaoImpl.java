@@ -1,5 +1,6 @@
-package com.thoughtworks.iamcoach.pos.dao;
+package com.thoughtworks.iamcoach.pos.dao.impl;
 
+import com.thoughtworks.iamcoach.pos.dao.PromotionDao;
 import com.thoughtworks.iamcoach.pos.entity.Promotion;
 import com.thoughtworks.iamcoach.pos.entity.PromotionFactory;
 import com.thoughtworks.iamcoach.pos.util.JdbcUtil;

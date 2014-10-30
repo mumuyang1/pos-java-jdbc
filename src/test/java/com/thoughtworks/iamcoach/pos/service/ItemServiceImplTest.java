@@ -1,25 +1,9 @@
 package com.thoughtworks.iamcoach.pos.service;
 
-import com.thoughtworks.iamcoach.pos.dao.ItemDao;
-import com.thoughtworks.iamcoach.pos.dao.ItemDaoImpl;
-import com.thoughtworks.iamcoach.pos.dao.PromotionDao;
-import com.thoughtworks.iamcoach.pos.dao.PromotionDaoImpl;
-import com.thoughtworks.iamcoach.pos.entity.Item;
-import com.thoughtworks.iamcoach.pos.entity.Promotion;
-import com.thoughtworks.iamcoach.pos.entity.PromotionFactory;
-import com.thoughtworks.iamcoach.pos.util.JdbcUtil;
 import org.junit.Test;
-
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 
 import static org.fest.assertions.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 public class ItemServiceImplTest {
 
