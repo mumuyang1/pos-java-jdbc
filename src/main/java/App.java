@@ -30,6 +30,6 @@ public class App {
         }
 
         System.out.println("总计金额 优惠前：" + Calculator.getTotalMoney() + "元   优惠后：" + Calculator.getTotalMoneyAfterPromoting() +
-                "元   优惠差价:" + Calculator.getTotalMoneyAfterPromoting() + "元");
+                "元   优惠差价:" + Calculator.getTotalSavedMoney() + "元");
     }
 }
