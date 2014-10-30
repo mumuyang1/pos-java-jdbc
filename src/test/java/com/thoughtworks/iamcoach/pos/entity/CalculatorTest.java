@@ -82,7 +82,7 @@ public class CalculatorTest {
 
     @Test
     public void should_return_a_total_money_with_promotions_for_all_cart_items(){
-        assertThat(Calculator.getTotalMoneyAfterPromoting()).isEqualTo(0);
+        assertThat(Calculator.getTotalMoneyAfterPromoting()).isEqualTo(4608.8);
     }
 
 

@@ -33,7 +33,14 @@ public class Calculator {
         return totalMoney;
     }
 
+
     public static double getTotalMoneyAfterPromoting() {
-        return 0;
+        double totalMoneyAfterPromoting = 0;
+        Scanner scanner = new Scanner();
+        List<CartItem> cartItems = scanner.getCartItems();
+        for (CartItem cartItem : cartItems) {
+            totalMoneyAfterPromoting += getSubtotal(cartItem);
+        }
+        return totalMoneyAfterPromoting;
     }
 }
