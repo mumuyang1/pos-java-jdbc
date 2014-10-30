@@ -45,15 +45,18 @@ public class ItemDaoImpl implements ItemDao {
             rs = pre.executeQuery();
 
             while (rs.next()) {
+
                 PromotionDao promotionDaoImpl = new PromotionDaoImpl();
                 int promotionId = rs.getInt("promotionid");
-                Promotion promotion = promotionDaoImpl.getPromotion(promotionId);
-                Promotion promotion1 = PromotionFactory.getPromotionByType(promotion.getType());
-                promotion1.setId(promotion.getId());
-                promotion1.setType(promotion.getType());
-                promotion1.setDescription(promotion.getDescription());
-                promotion1.setDiscount(rs.getDouble("discount"));
-                itemPromotions.add(promotion1);
+                Promotion promotionForType = promotionDaoImpl.getPromotion(promotionId);
+
+                Promotion promotion = PromotionFactory.getPromotionByType(promotionForType.getType());
+                promotion.setId(promotionForType.getId());
+                promotion.setType(promotionForType.getType());
+                promotion.setDescription(promotionForType.getDescription());
+                promotion.setDiscount(rs.getDouble("discount"));
+
+                itemPromotions.add(promotion);
             }
             rs.close();
             pre.close();
