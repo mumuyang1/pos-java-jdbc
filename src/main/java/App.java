@@ -24,13 +24,15 @@ public class App {
 
                 if (cartCategory.equals(cartItem.getItem().getCategory())) {
                     System.out.println(cartItem.getItem().getName() +
-                            "  数量：" + cartItem.getCount() + cartItem.getItem().getUnit() +"  单价：" + cartItem.getItem().getPrice() + "元" +
-                             "  小计:" + DataTransfer.transfer(Calculator.getSubtotal(cartItem)) + "元");
+                            "  数量：" + cartItem.getCount() + cartItem.getItem().getUnit() +
+                            "  单价：" + cartItem.getItem().getPrice() + "元" +
+                            "  小计:" + DataTransfer.transfer(Calculator.getSubtotal(cartItem)) + "元");
                 }
             }
         }
 
-        System.out.println("总计金额 优惠前：" + Calculator.getTotalMoney() + "元   优惠后：" + Calculator.getTotalMoneyAfterPromoting() +
+        System.out.println("总计金额 优惠前：" + Calculator.getTotalMoney() +
+                "元   优惠后：" + Calculator.getTotalMoneyAfterPromoting() +
                 "元   优惠差价:" + Calculator.getTotalSavedMoney() + "元");
     }
 }
