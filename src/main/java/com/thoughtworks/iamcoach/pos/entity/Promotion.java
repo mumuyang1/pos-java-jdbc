@@ -1,4 +1,4 @@
-package com.thoughtworks.iamcoach.pos.entity.promotion;
+package com.thoughtworks.iamcoach.pos.entity;
 
 import com.thoughtworks.iamcoach.pos.entity.CartItem;
 

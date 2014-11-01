@@ -1,7 +1,5 @@
 package com.thoughtworks.iamcoach.pos.entity;
 
-import com.thoughtworks.iamcoach.pos.entity.promotion.Promotion;
-import com.thoughtworks.iamcoach.pos.entity.promotion.PromotionFactory;
 import com.thoughtworks.iamcoach.pos.util.DataTransfer;
 
 import java.util.ArrayList;

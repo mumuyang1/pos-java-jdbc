@@ -1,6 +1,4 @@
-package com.thoughtworks.iamcoach.pos.entity.promotion;
-
-import com.thoughtworks.iamcoach.pos.entity.CartItem;
+package com.thoughtworks.iamcoach.pos.entity;
 
 import java.util.List;
 

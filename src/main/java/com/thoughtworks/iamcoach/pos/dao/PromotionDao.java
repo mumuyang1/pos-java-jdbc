@@ -1,6 +1,6 @@
 package com.thoughtworks.iamcoach.pos.dao;
 
-import com.thoughtworks.iamcoach.pos.entity.promotion.Promotion;
+import com.thoughtworks.iamcoach.pos.entity.Promotion;
 
 import java.util.Set;
 
