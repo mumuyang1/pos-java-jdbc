@@ -36,10 +36,8 @@ public class Scanner {
         return itemServiceImpl.getItem(barcode);
     }
 
-    public Set<String> getCartCategories() {
+    public Set<String> getCartCategories(List<CartItem> cartItems) {
         Set<String> cartCategories = new HashSet<String>();
-        Scanner scanner = new Scanner();
-        List<CartItem> cartItems = scanner.getCartItems();
         for (CartItem cartItem : cartItems) {
             cartCategories.add(cartItem.getItem().getCategory());
         }
