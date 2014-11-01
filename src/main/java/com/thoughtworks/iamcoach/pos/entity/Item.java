@@ -2,7 +2,6 @@ package com.thoughtworks.iamcoach.pos.entity;
 
 import com.thoughtworks.iamcoach.pos.entity.promotion.Promotion;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Item {
@@ -13,7 +12,7 @@ public class Item {
     private String unit;
     private double price;
     private String category;
-    private List<Promotion> promotions = new ArrayList<Promotion>();
+    private List<Promotion> promotions;
 
     public Item() {
     }
