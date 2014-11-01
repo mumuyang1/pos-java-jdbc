@@ -16,7 +16,7 @@ public class App {
 
         Scanner scanner = new Scanner();
         List<CartItem> cartItems = scanner.getCartItems();
-        Set<String> cartCategories = scanner.getCartCategories();
+        Set<String> cartCategories = scanner.getCartCategories(cartItems);
 
         for (String cartCategory : cartCategories) {
             System.out.println(cartCategory);
