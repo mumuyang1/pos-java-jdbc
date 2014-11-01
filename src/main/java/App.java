@@ -1,7 +1,10 @@
 import com.thoughtworks.iamcoach.pos.entity.Calculator;
 import com.thoughtworks.iamcoach.pos.entity.CartItem;
 import com.thoughtworks.iamcoach.pos.entity.Scanner;
+import com.thoughtworks.iamcoach.pos.service.ItemService;
+import com.thoughtworks.iamcoach.pos.service.impl.ItemServiceImpl;
 import com.thoughtworks.iamcoach.pos.util.DataTransfer;
+import com.thoughtworks.iamcoach.pos.util.FileProcessor;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -14,8 +17,10 @@ public class App {
         System.out.println("**************************LET US GO**************************");
         System.out.println("打印时间 " + dateFormat.format(new Date()));
 
-        Scanner scanner = new Scanner();
-        List<CartItem> cartItems = scanner.getCartItems();
+        ItemService itemServiceImpl = new ItemServiceImpl();
+
+        Scanner scanner = new Scanner(itemServiceImpl);
+        List<CartItem> cartItems = scanner.getCartItems(FileProcessor.readFile("cart.txt"));
         Set<String> cartCategories = scanner.getCartCategories(cartItems);
 
         for (String cartCategory : cartCategories) {

@@ -1,20 +1,40 @@
 package com.thoughtworks.iamcoach.pos.entity;
 
+import com.thoughtworks.iamcoach.pos.service.ItemService;
+import com.thoughtworks.iamcoach.pos.service.impl.ItemServiceImpl;
 import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.fest.assertions.api.Assertions.assertThat;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 public class ScannerTest {
 
-//    @Test
-//    public void should_return_a_cart_list() {
-//        Scanner cartItemProcessor = new Scanner();
-//        assertThat(cartItemProcessor.getCartItems().get(0).getItem().getName()).isEqualTo("五花肉");
-//    }
-//
+    @Test
+    public void should_return_a_cart_list() {
+        ItemService itemServiceImpl = mock(ItemServiceImpl.class);
+        Item item2 = new Item(2, "ITEM000003", "全家桶", "桶", 50, "食品");
+        Item item3 = new Item(2, "ITEM000005", "草莓圣代", "杯", 10, "食品");
+        when(itemServiceImpl.getItem("ITEM000003")).thenReturn(item2);
+        when(itemServiceImpl.getItem("ITEM000005")).thenReturn(item3);
+        String cart3 = "ITEM000003-5.5";
+        String cart4 = "ITEM000005";
+        String cart5 = "ITEM000005";
+
+        List<String> cartList = new ArrayList<String>();
+        cartList.add(cart3);
+        cartList.add(cart4);
+        cartList.add(cart5);
+
+        Scanner cartItemProcessor = new Scanner(itemServiceImpl);
+        assertThat(cartItemProcessor.getCartItems(cartList).get(0).getItem().getName()).isEqualTo("全家桶");
+        assertThat(cartItemProcessor.getCartItems(cartList).get(0).getCount()).isEqualTo(5.5);
+        assertThat(cartItemProcessor.getCartItems(cartList).size()).isEqualTo(2);
+    }
+
     @Test
     public void should_return_a_cartItems_category_list() {
         Item item1 = new Item(2, "ITEM000002", "全家桶", "桶", 50, "食品");
