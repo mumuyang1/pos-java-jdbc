@@ -1,5 +1,7 @@
 package com.thoughtworks.iamcoach.pos.entity;
 
+import com.thoughtworks.iamcoach.pos.util.DataTransfer;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -42,8 +44,8 @@ public class Calculator {
     }
 
 
-//    public static double getTotalSavedMoney(List<CartItem> cartItems) {
-//
-//        return DataTransfer.transfer(getTotalMoney(cartItems) - getTotalMoneyAfterPromoting());
-//    }
+    public static double getTotalSavedMoney(List<CartItem> cartItems) {
+
+        return DataTransfer.transfer(getTotalMoney(cartItems) - getTotalMoneyAfterPromoting(cartItems));
+    }
 }
