@@ -23,11 +23,9 @@ public class Calculator {
     }
 
 
-    public static double getTotalMoney() {
+    public static double getTotalMoney(List<CartItem> cartItems) {
 
         double totalMoney = 0.0;
-        Scanner scanner = new Scanner();
-        List<CartItem> cartItems = scanner.getCartItems();
         for (CartItem cartItem : cartItems) {
 
             totalMoney += cartItem.getItem().getPrice() * cartItem.getCount();
@@ -47,8 +45,8 @@ public class Calculator {
     }
 
 
-    public static double getTotalSavedMoney() {
+    public static double getTotalSavedMoney(List<CartItem> cartItems) {
 
-        return DataTransfer.transfer(getTotalMoney() - getTotalMoneyAfterPromoting());
+        return DataTransfer.transfer(getTotalMoney(cartItems) - getTotalMoneyAfterPromoting());
     }
 }
