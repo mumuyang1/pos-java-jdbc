@@ -16,10 +16,11 @@ public class PromotionDaoImpl implements PromotionDao {
     ResultSet rs;
     PreparedStatement pre;
     private JdbcUtil jdbcUtil = new JdbcUtil();
-    Connection conn = jdbcUtil.getConnection();
+//    Connection conn = jdbcUtil.getConnection();
 
     @Override
     public Promotion getPromotion(int id) {
+        Connection conn = jdbcUtil.getConnection();
         Promotion promotion = null;
         try {
             pre = conn.prepareStatement("SELECT * FROM promotions WHERE p_id = ?");
@@ -48,6 +49,7 @@ public class PromotionDaoImpl implements PromotionDao {
 
     @Override
     public Set<String> getPromotionBarcode() {
+        Connection conn = jdbcUtil.getConnection();
         Set<String> promotionBarcodes = new HashSet<String>();
         try {
             pre = conn.prepareStatement("select * from items i, items_promotions ip where i.i_id = ip.itemid ");

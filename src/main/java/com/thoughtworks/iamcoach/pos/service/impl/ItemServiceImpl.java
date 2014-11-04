@@ -13,10 +13,11 @@ public class ItemServiceImpl implements ItemService {
         this.promotionService=promotionService;
     }
 
-    @Override
-    public Item getItem(String barcode) {
+    ItemDao itemDaoImpl = new ItemDaoImpl();
 
-        ItemDao itemDaoImpl = new ItemDaoImpl();
+    @Override
+    public Item getItem(String barcode){
+
         Item item =itemDaoImpl.getItem(barcode);
         item.setPromotions(promotionService.getItemPromotions(barcode));
         return item;

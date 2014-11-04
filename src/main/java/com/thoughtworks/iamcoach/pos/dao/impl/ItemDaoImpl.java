@@ -15,11 +15,10 @@ public class ItemDaoImpl implements ItemDao {
     ResultSet rs;
     PreparedStatement pre;
     private JdbcUtil jdbcUtil = new JdbcUtil();
-    Connection conn = jdbcUtil.getConnection();
 
     @Override
     public Item getItem(String barcode) {
-
+        Connection conn = jdbcUtil.getConnection();
         Item item = null;
         try {
             pre = conn.prepareStatement("select * from items i,categories c where  i.i_categoryid = c.c_id and i_barcode =?");
@@ -43,6 +42,7 @@ public class ItemDaoImpl implements ItemDao {
 
     @Override
     public List<Promotion> getItemPromotions(String barcode) {
+        Connection conn = jdbcUtil.getConnection();
         List<Promotion> itemPromotions = new ArrayList<Promotion>();
 
         try {

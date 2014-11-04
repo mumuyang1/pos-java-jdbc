@@ -11,11 +11,11 @@ import java.util.List;
 
 public class PromotionServiceImpl implements PromotionService {
 
+    PromotionDao promotionDaoImpl = new PromotionDaoImpl();
+    ItemDao itemDaoImpl = new ItemDaoImpl();
+
     @Override
     public List<Promotion> getItemPromotions(String barcode) {
-
-        PromotionDao promotionDaoImpl = new PromotionDaoImpl();
-        ItemDao itemDaoImpl = new ItemDaoImpl();
 
         if (promotionDaoImpl.getPromotionBarcode().contains(barcode)) {
             return itemDaoImpl.getItemPromotions(barcode);
