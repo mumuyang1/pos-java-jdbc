@@ -31,11 +31,17 @@ public class PromotionDaoImpl implements PromotionDao {
             promotion.setId(rs.getInt("p_id"));
             promotion.setDescription(rs.getString("p_description"));
             promotion.setType(rs.getInt("p_type"));
-            rs.close();
-            pre.close();
-            jdbcUtil.closeConnection();
+
         } catch (SQLException e) {
             e.printStackTrace();
+        }finally {
+            try {
+                rs.close();
+                pre.close();
+                jdbcUtil.closeConnection();
+            }catch (SQLException ex){
+                ex.printStackTrace();
+            }
         }
         return promotion;
     }
@@ -49,11 +55,17 @@ public class PromotionDaoImpl implements PromotionDao {
             while (rs.next()) {
                 promotionBarcodes.add(rs.getString("i_barcode"));
             }
-            rs.close();
-            pre.close();
-            jdbcUtil.closeConnection();
+
         } catch (SQLException e) {
             e.printStackTrace();
+        }finally {
+            try {
+                rs.close();
+                pre.close();
+                jdbcUtil.closeConnection();
+            }catch (SQLException ex){
+                ex.printStackTrace();
+            }
         }
         return promotionBarcodes;
     }

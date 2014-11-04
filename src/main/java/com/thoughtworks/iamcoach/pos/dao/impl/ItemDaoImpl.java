@@ -27,12 +27,16 @@ public class ItemDaoImpl implements ItemDao {
             rs = pre.executeQuery();
             rs.next();
             item = new Item(rs.getInt("i_id"), barcode, rs.getString("i_name"), rs.getString("i_unit"), rs.getDouble("i_price"), rs.getString("c_name"));
-            rs.close();
-            pre.close();
-            jdbcUtil.closeConnection();
-
         } catch (SQLException e) {
             e.printStackTrace();
+        }finally {
+            try {
+                rs.close();
+                pre.close();
+                jdbcUtil.closeConnection();
+            }catch (SQLException ex){
+                ex.printStackTrace();
+            }
         }
         return item;
     }
@@ -60,14 +64,23 @@ public class ItemDaoImpl implements ItemDao {
 
                 itemPromotions.add(promotion);
             }
-            rs.close();
-            pre.close();
-            jdbcUtil.closeConnection();
 
         } catch (SQLException e) {
             e.printStackTrace();
+        }finally {
+            try {
+                rs.close();
+                pre.close();
+                jdbcUtil.closeConnection();
+            }catch (SQLException ex){
+                ex.printStackTrace();
+            }
+
         }
         return itemPromotions;
     }
 
 }
+
+
+
