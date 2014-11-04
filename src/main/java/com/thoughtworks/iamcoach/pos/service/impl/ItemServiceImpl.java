@@ -1,8 +1,11 @@
-package com.thoughtworks.iamcoach.pos.service;
+package com.thoughtworks.iamcoach.pos.service.impl;
 
 import com.thoughtworks.iamcoach.pos.dao.ItemDao;
 import com.thoughtworks.iamcoach.pos.dao.impl.ItemDaoImpl;
 import com.thoughtworks.iamcoach.pos.entity.Item;
+import com.thoughtworks.iamcoach.pos.service.ItemService;
+import com.thoughtworks.iamcoach.pos.service.PromotionService;
+import com.thoughtworks.iamcoach.pos.service.impl.PromotionServiceImpl;
 
 public class ItemServiceImpl implements ItemService {
 
