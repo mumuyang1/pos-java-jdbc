@@ -21,7 +21,7 @@ public class App {
 
         PromotionService promotionService = new PromotionServiceImpl();
         ItemService itemServiceImpl = new ItemServiceImpl(promotionService);
-        
+
         Scanner scanner = new Scanner(itemServiceImpl);
         List<CartItem> cartItems = scanner.getCartItems(FileProcessor.readFile("cart.txt"));
         Set<String> cartCategories = scanner.getCartCategories(cartItems);

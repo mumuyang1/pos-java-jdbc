@@ -11,7 +11,7 @@ public class ItemServiceImpl implements ItemService {
     private PromotionService promotionService ;
     public ItemServiceImpl(PromotionService promotionService){
         this.promotionService=promotionService;
-    };
+    }
 
     @Override
     public Item getItem(String barcode) {

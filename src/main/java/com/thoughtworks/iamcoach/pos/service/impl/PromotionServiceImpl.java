@@ -16,6 +16,7 @@ public class PromotionServiceImpl implements PromotionService {
 
         PromotionDao promotionDaoImpl = new PromotionDaoImpl();
         ItemDao itemDaoImpl = new ItemDaoImpl();
+
         if (promotionDaoImpl.getPromotionBarcode().contains(barcode)) {
             return itemDaoImpl.getItemPromotions(barcode);
         }else {
