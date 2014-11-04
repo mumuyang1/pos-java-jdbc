@@ -11,7 +11,7 @@ public class Scanner {
         this.itemServiceImpl = itemServiceImpl;
     }
 
-    public Scanner(){
+    public Scanner() {
 
     }
 

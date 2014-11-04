@@ -16,7 +16,6 @@ public class PromotionDaoImpl implements PromotionDao {
     ResultSet rs;
     PreparedStatement pre;
     private JdbcUtil jdbcUtil = new JdbcUtil();
-//    Connection conn = jdbcUtil.getConnection();
 
     @Override
     public Promotion getPromotion(int id) {
@@ -35,12 +34,12 @@ public class PromotionDaoImpl implements PromotionDao {
 
         } catch (SQLException e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             try {
                 rs.close();
                 pre.close();
                 jdbcUtil.closeConnection();
-            }catch (SQLException ex){
+            } catch (SQLException ex) {
                 ex.printStackTrace();
             }
         }
@@ -60,12 +59,12 @@ public class PromotionDaoImpl implements PromotionDao {
 
         } catch (SQLException e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             try {
                 rs.close();
                 pre.close();
                 jdbcUtil.closeConnection();
-            }catch (SQLException ex){
+            } catch (SQLException ex) {
                 ex.printStackTrace();
             }
         }

@@ -12,7 +12,7 @@ public class PromotionServiceImpl implements PromotionService {
     private PromotionDao promotionDaoImpl;
     private ItemDao itemDaoImpl;
 
-    public PromotionServiceImpl(PromotionDao promotionDaoImpl,ItemDao itemDaoImpl){
+    public PromotionServiceImpl(PromotionDao promotionDaoImpl, ItemDao itemDaoImpl) {
         this.promotionDaoImpl = promotionDaoImpl;
         this.itemDaoImpl = itemDaoImpl;
     }
