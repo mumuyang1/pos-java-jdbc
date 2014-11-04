@@ -1,3 +1,5 @@
+import com.thoughtworks.iamcoach.pos.dao.ItemDao;
+import com.thoughtworks.iamcoach.pos.dao.impl.ItemDaoImpl;
 import com.thoughtworks.iamcoach.pos.entity.Calculator;
 import com.thoughtworks.iamcoach.pos.entity.CartItem;
 import com.thoughtworks.iamcoach.pos.entity.Scanner;
@@ -20,7 +22,8 @@ public class App {
         System.out.println("打印时间 " + dateFormat.format(new Date()));
 
         PromotionService promotionService = new PromotionServiceImpl();
-        ItemService itemServiceImpl = new ItemServiceImpl(promotionService);
+        ItemDao itemDaoImpl = new ItemDaoImpl();
+        ItemService itemServiceImpl = new ItemServiceImpl(promotionService,itemDaoImpl);
 
         Scanner scanner = new Scanner(itemServiceImpl);
         List<CartItem> cartItems = scanner.getCartItems(FileProcessor.readFile("cart.txt"));
