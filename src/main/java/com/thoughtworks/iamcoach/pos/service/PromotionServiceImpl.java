@@ -11,7 +11,7 @@ import java.util.List;
 public class PromotionServiceImpl implements PromotionService {
 
     @Override
-    public List<Promotion> getPromotion(String barcode) {
+    public List<Promotion> getItemPromotions(String barcode) {
 
         PromotionDao promotionDaoImpl = new PromotionDaoImpl();
         ItemDao itemDaoImpl = new ItemDaoImpl();

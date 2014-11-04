@@ -12,7 +12,7 @@ public class ItemServiceImpl implements ItemService {
         PromotionService promotionService = new PromotionServiceImpl();
         ItemDao itemDaoImpl = new ItemDaoImpl();
         Item item =itemDaoImpl.getItem(barcode);
-        item.setPromotions(promotionService.getPromotion(barcode));
+        item.setPromotions(promotionService.getItemPromotions(barcode));
         return item;
     }
 
