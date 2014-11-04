@@ -8,10 +8,14 @@ import com.thoughtworks.iamcoach.pos.service.PromotionService;
 
 public class ItemServiceImpl implements ItemService {
 
+    private PromotionService promotionService ;
+    public ItemServiceImpl(PromotionService promotionService){
+        this.promotionService=promotionService;
+    };
+
     @Override
     public Item getItem(String barcode) {
 
-        PromotionService promotionService = new PromotionServiceImpl();
         ItemDao itemDaoImpl = new ItemDaoImpl();
         Item item =itemDaoImpl.getItem(barcode);
         item.setPromotions(promotionService.getItemPromotions(barcode));
