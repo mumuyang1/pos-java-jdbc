@@ -1,7 +1,5 @@
 package com.thoughtworks.iamcoach.pos.entity;
 
-import com.thoughtworks.iamcoach.pos.entity.CartItem;
-
 public abstract class Promotion {
 
     private int id;

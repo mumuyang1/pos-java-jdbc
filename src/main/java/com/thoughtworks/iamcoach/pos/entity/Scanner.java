@@ -37,8 +37,6 @@ public class Scanner {
         return cartItems;
     }
 
-
-
     public Set<String> getCartCategories(List<CartItem> cartItems) {
         Set<String> cartCategories = new HashSet<String>();
         for (CartItem cartItem : cartItems) {

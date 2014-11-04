@@ -24,14 +24,6 @@ public class Item {
         this.category = category;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public String getBarcode() {
-        return barcode;
-    }
-
     public String getUnit() {
         return unit;
     }
