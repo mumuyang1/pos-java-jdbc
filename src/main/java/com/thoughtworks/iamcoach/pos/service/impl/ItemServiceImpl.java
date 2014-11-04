@@ -9,7 +9,7 @@ public class ItemServiceImpl implements ItemService {
 
     private PromotionService promotionService ;
     private ItemDao itemDaoImpl;
-    
+
     public ItemServiceImpl(PromotionService promotionService,ItemDao itemDaoImpl){
         this.promotionService = promotionService;
         this.itemDaoImpl = itemDaoImpl;

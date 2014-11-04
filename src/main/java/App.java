@@ -1,5 +1,7 @@
 import com.thoughtworks.iamcoach.pos.dao.ItemDao;
+import com.thoughtworks.iamcoach.pos.dao.PromotionDao;
 import com.thoughtworks.iamcoach.pos.dao.impl.ItemDaoImpl;
+import com.thoughtworks.iamcoach.pos.dao.impl.PromotionDaoImpl;
 import com.thoughtworks.iamcoach.pos.entity.Calculator;
 import com.thoughtworks.iamcoach.pos.entity.CartItem;
 import com.thoughtworks.iamcoach.pos.entity.Scanner;
@@ -21,8 +23,11 @@ public class App {
         System.out.println("**************************LET US GO**************************");
         System.out.println("打印时间 " + dateFormat.format(new Date()));
 
-        PromotionService promotionService = new PromotionServiceImpl();
         ItemDao itemDaoImpl = new ItemDaoImpl();
+        PromotionDao promotionDaoImpl = new PromotionDaoImpl();
+
+        PromotionService promotionService = new PromotionServiceImpl(promotionDaoImpl,itemDaoImpl);
+
         ItemService itemServiceImpl = new ItemServiceImpl(promotionService,itemDaoImpl);
 
         Scanner scanner = new Scanner(itemServiceImpl);
