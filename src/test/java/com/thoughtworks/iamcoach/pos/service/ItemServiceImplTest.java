@@ -21,11 +21,7 @@ public class ItemServiceImplTest {
 
     @Test
     public void should_return_Item_with_promotions() throws SQLException {
-//        PromotionDao promotionDao = mock(PromotionDaoImpl.class);
-//        Set<String> promotionBarcodes = new HashSet<String>();
-//        promotionBarcodes.add("ITEM000001");
-//        promotionBarcodes.add("ITEM000003");
-//        when(promotionDao.getPromotionBarcode()).thenReturn(promotionBarcodes);
+
 
         PromotionService promotionService = mock(PromotionServiceImpl.class);
         List<Promotion> promotions = new ArrayList<Promotion>();
