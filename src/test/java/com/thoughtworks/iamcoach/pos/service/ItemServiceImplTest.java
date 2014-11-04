@@ -7,7 +7,6 @@ import com.thoughtworks.iamcoach.pos.dao.impl.PromotionDaoImpl;
 import com.thoughtworks.iamcoach.pos.entity.Item;
 import com.thoughtworks.iamcoach.pos.entity.Promotion;
 import com.thoughtworks.iamcoach.pos.entity.PromotionFactory;
-import com.thoughtworks.iamcoach.pos.service.impl.ItemServiceImpl;
 import org.junit.Test;
 
 import java.sql.SQLException;

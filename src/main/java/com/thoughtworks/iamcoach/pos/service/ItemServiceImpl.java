@@ -1,4 +1,4 @@
-package com.thoughtworks.iamcoach.pos.service.impl;
+package com.thoughtworks.iamcoach.pos.service;
 
 import com.thoughtworks.iamcoach.pos.dao.ItemDao;
 import com.thoughtworks.iamcoach.pos.dao.PromotionDao;

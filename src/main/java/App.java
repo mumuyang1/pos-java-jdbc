@@ -6,7 +6,7 @@ import com.thoughtworks.iamcoach.pos.entity.Calculator;
 import com.thoughtworks.iamcoach.pos.entity.CartItem;
 import com.thoughtworks.iamcoach.pos.entity.Scanner;
 import com.thoughtworks.iamcoach.pos.service.ItemService;
-import com.thoughtworks.iamcoach.pos.service.impl.ItemServiceImpl;
+import com.thoughtworks.iamcoach.pos.service.ItemServiceImpl;
 import com.thoughtworks.iamcoach.pos.util.DataTransfer;
 import com.thoughtworks.iamcoach.pos.util.FileProcessor;
 
