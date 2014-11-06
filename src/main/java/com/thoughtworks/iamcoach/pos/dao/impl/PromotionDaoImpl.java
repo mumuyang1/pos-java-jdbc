@@ -47,7 +47,7 @@ public class PromotionDaoImpl implements PromotionDao {
     }
 
     @Override
-    public Set<String> getPromotionBarcode() {
+    public Set<String> getPromotionBarcodes() {
         Connection conn = jdbcUtil.getConnection();
         Set<String> promotionBarcodes = new HashSet<String>();
         try {
